@@ -11,10 +11,15 @@ class CreateLinksTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
+    public function up() {
         Schema::create('links', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
+            $table->string('title');
+            $table->string('url');
+            $table->date('publication_date'); //Carbon
+            $table->date('date_last_accessed'); //Carbon
+            $table->string('category');
             $table->timestamps();
         });
     }
@@ -24,8 +29,7 @@ class CreateLinksTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down() {
         Schema::dropIfExists('links');
     }
 }

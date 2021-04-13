@@ -19,8 +19,10 @@ Route::get('/', function () {
 
 Route::get('/about', function () {
     return view('about', [
-        'links' => App\Links::latest()->get()
+        'links' => App\Links::take(3)->latest()->get()
     ]);
 });
+
+Route::get('/links/{link}', 'LinksController@show');
 
 
