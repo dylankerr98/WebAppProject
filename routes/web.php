@@ -19,10 +19,10 @@ Route::get('/', function () {
 
 Route::get('/about', function () {
     return view('about', [
-        'links' => App\Links::take(3)->latest()->get()
+        'links' => App\Link::take(3)->latest()->get()
     ]);
 });
-
+Route::get('/links', 'LinksController@index');
 Route::get('/links/{link}', 'LinksController@show');
 
 
