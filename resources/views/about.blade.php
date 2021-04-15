@@ -69,8 +69,8 @@
                         <h2>Tools</h2>
                         <ul class="style2">
                             <li><a href="https://code.visualstudio.com" target="_blank">Visual Studio Code</a></li>
-                            <li><a href="https://www.jetbrains.com/phpstorm/" target="_blank">Phpstorm</a></li>
-                            <li><a href="https://www.phpmyadmin.net" target="_blank">PhpMyAdim</a></li>
+                            <li><a href="https://www.jetbrains.com/phpstorm/" target="_blank">PhpStorm</a></li>
+                            <li><a href="https://www.phpmyadmin.net" target="_blank">Php MyAdmin</a></li>
                             <li><a href="https://getcomposer.org" target="_blank">Composer</a></li>
                         </ul>
                     </div>

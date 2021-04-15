@@ -20,6 +20,9 @@ Released   : 20140225
 
     <link href="/css/default.css" rel="stylesheet" />
     <link href="/css/fonts.css" rel="stylesheet" />
+
+    @yield('head')
+
 </head>
 <body>
     <div id="header-wrapper">
@@ -39,7 +42,7 @@ Released   : 20140225
                         <a href="/share" accesskey="3" title="">Share Link</a>
                     </li>
                     <li class="{{Request::path() ===  'about' ? 'current_page_item' : '' }}">
-                        <a href="about" accesskey="4" title="">About Module</a>
+                        <a href="/about" accesskey="4" title="">About Module</a>
                     </li>
                     <li class="{{Request::path() ===  'contact' ? 'current_page_item' : '' }}">
                         <a href="/contact" accesskey="5" title="">Contact Us</a>

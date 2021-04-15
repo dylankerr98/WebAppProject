@@ -17,12 +17,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/about', function () {
     return view('about', [
         'links' => App\Link::take(3)->latest()->get()
     ]);
 });
+
 Route::get('/links', 'LinksController@index');
+Route::post('/links', 'LinksController@store');
+Route::get('/share', 'LinksController@create');
 Route::get('/links/{link}', 'LinksController@show');
+Route::get('/links/{link}/edit', 'LinksController@edit');
+Route::put('/links/{link}', 'LinksController@update');
+Route::Delete('/links/{link}/edit', 'LinksController@destroy');
 
 
