@@ -30,8 +30,6 @@ class LinksController extends Controller {
 
     public function store(Request $request) {
 
-        $date = $this->getDate();
-
         request()->validate([
             'title' => ['required', 'max:255'],
             'url' => 'required',
@@ -42,8 +40,8 @@ class LinksController extends Controller {
             'title' => request('title'),
             'url' => request('url'),
             'category' => request('category'),
-            'publication_date' => $date,
-            'date_last_accessed' => $date,
+            'publication_date' => $this->getDate(),
+            'date_last_accessed' => $this->getDate()
         ]);
 
         return redirect('/links');
@@ -58,13 +56,11 @@ class LinksController extends Controller {
 
     public function update(Link $link) {
 
-        $date = $this->getDate();
-
         $link->update(request()->validate([
             'title' => 'required',
             'url' => 'required',
             'category' => 'required',
-            'date_last_accessed' => $date
+            'date_last_accessed' => $this->getDate()
        ]));
 
         return redirect('/links/' . $link->id);
